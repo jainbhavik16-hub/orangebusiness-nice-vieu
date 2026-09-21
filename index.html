@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orange Business + NiCE GTM Strategy Brief · Vieu · September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1A1818;
+    --ink-mid:   #3D3A3A;
+    --ink-soft:  #7A7575;
+    --rule:      #E2DFDC;
+    --paper:     #F8F6F3;
+    --white:     #FFFFFF;
+    --accent:    #7744FF;
+    --accent-lt: #EDE8FF;
+    --gold:      #B8892A;
+    --gold-lt:   #FDF5E4;
+    --red:       #C0392B;
+    --green:     #1D7A4A;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+    --max:   860px;
+  }
+
+  html { font-size: 16px; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  .page { max-width: var(--max); margin: 0 auto; padding: 0 40px 80px; }
+
+  /* Cover */
+  .cover { padding: 72px 0 56px; border-bottom: 1px solid var(--ink); margin-bottom: 56px; }
+  .cover-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .cover-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--accent); }
+  .cover-title { font-family: var(--serif); font-size: clamp(40px, 5.6vw, 60px); line-height: 1.07; color: var(--ink); margin-bottom: 10px; }
+  .cover-title em { font-style: italic; color: var(--accent); }
+  .cover-sub { font-size: 17px; color: var(--ink-mid); font-weight: 300; margin-bottom: 36px; max-width: 580px; }
+  .cover-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .cover-meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .cover-meta-value { font-size: 13px; font-weight: 500; color: var(--ink); }
+
+  /* Sections */
+  .section { margin-bottom: 64px; }
+  .section + .section { padding-top: 48px; border-top: 1px solid var(--rule); }
+  .section-title { font-family: var(--serif); font-size: 28px; line-height: 1.18; color: var(--ink); margin-bottom: 20px; }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-intro { font-size: 15px; color: var(--ink-mid); line-height: 1.7; max-width: 680px; margin-bottom: 28px; }
+
+  /* Stat strip */
+  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; margin-bottom: 40px; }
+  .stat-cell { background: var(--white); padding: 24px 22px; }
+  .stat-num { font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--accent); margin-bottom: 6px; }
+  .stat-label { font-size: 12px; font-weight: 500; color: var(--ink-soft); line-height: 1.4; }
+
+  /* Pull quote */
+  .pull-quote { border-left: 3px solid var(--accent); padding: 16px 24px; background: var(--accent-lt); border-radius: 0 6px 6px 0; margin: 28px 0; }
+  .pull-quote p { font-family: var(--serif); font-size: 18px; line-height: 1.5; color: var(--ink); font-style: italic; }
+  .pull-quote cite { display: block; margin-top: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-style: normal; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cards.three { grid-template-columns: repeat(3, 1fr); }
+  .card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 20px; }
+  .card-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .card-title { font-family: var(--serif); font-size: 17px; line-height: 1.25; margin-bottom: 10px; color: var(--ink); }
+  .card-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+  .card.accent-top { border-top: 3px solid var(--accent); }
+
+  /* Two-col */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  /* Tags */
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tag { font-size: 11.5px; font-weight: 500; padding: 4px 12px; border-radius: 20px; background: var(--white); border: 1px solid var(--rule); color: var(--ink-mid); }
+  .tag.tier1 { background: var(--accent); color: var(--white); border-color: var(--accent); font-weight: 600; }
+  .tag.tier2 { background: var(--accent-lt); color: var(--accent); border-color: var(--accent); }
+
+  /* Segmented sub-labels */
+  .sub-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin: 18px 0 4px; }
+  .segment { background: var(--white); border: 1px solid var(--rule); border-top: 3px solid var(--accent); border-radius: 8px; padding: 22px 24px; margin-bottom: 16px; }
+  .segment-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .segment-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-lt); padding: 3px 10px; border-radius: 20px; }
+  .segment-title { font-family: var(--serif); font-size: 19px; color: var(--ink); }
+  .side-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-lt); padding: 2px 9px; border-radius: 20px; margin-left: 8px; white-space: nowrap; vertical-align: middle; }
+
+  /* Tables */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  .data-table th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--ink); padding: 10px 14px; border: none; }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-mid); line-height: 1.55; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--white); }
+  .data-table tr:nth-child(odd) td { background: var(--paper); }
+  .data-table td strong { color: var(--ink); font-weight: 600; }
+
+  /* Priority list */
+  .priority-list { counter-reset: priority; list-style: none; }
+  .priority-list li { counter-increment: priority; display: grid; grid-template-columns: 88px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .priority-list li:last-child { border-bottom: none; }
+  .priority-list li::before { content: counter(priority, decimal-leading-zero); font-family: var(--serif); font-size: 72px; color: var(--accent); line-height: 1; margin-top: 2px; }
+  .priority-item-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .priority-item-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+
+  /* Vieu dark box */
+  .vieu-box { background: var(--ink); border-radius: 10px; padding: 32px 36px; color: var(--white); }
+  .vieu-box-label { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .vieu-box h3 { font-family: var(--serif); font-size: 22px; color: var(--white); margin-bottom: 16px; line-height: 1.3; }
+  .vieu-box > p { font-size: 13.5px; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 24px; }
+
+  /* Pillars */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+  .pillar { border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: 18px 16px; text-align: center; }
+  .pillar-text { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.35; }
+
+  /* Delivery matrix */
+  .del-matrix-wrap { position: relative; margin-top: 4px; }
+  .del-matrix { width: 100%; border-collapse: collapse; }
+  .del-matrix th { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .del-matrix th.label-col { text-align: left; width: 60%; color: rgba(255,255,255,0.45); }
+  .del-matrix th.delivers-col { color: var(--accent); border-bottom: 2px solid var(--accent); }
+  .del-matrix th.access-col  { color: rgba(255,255,255,0.45); }
+  .del-matrix td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.07); vertical-align: middle; }
+  .del-matrix tr:last-child td { border-bottom: none; }
+  .del-matrix td.label-col { padding-left: 0; }
+  .del-matrix td.icon-col  { text-align: center; width: 20%; }
+  .row-num { display: inline-block; background: rgba(119,68,255,0.35); color: var(--accent); font-size: 10px; font-weight: 700; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 4px; margin-right: 10px; flex-shrink: 0; }
+  .row-label-wrap { display: flex; align-items: flex-start; }
+  .row-label-inner { display: flex; flex-direction: column; }
+  .row-title { font-size: 13.5px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+  .row-desc  { font-size: 11.5px; color: rgba(255,255,255,0.5); line-height: 1.4; }
+  .mark-delivers { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; border: 1.5px solid var(--accent); background: rgba(119,68,255,0.2); }
+  .mark-delivers svg { width: 12px; height: 12px; stroke: var(--accent); stroke-width: 2.5; fill: none; }
+
+  /* Deliverable rows */
+  .del-row { display:grid; grid-template-columns:160px 1fr; border:1px solid var(--rule); border-top:none; overflow:hidden; }
+  .del-row.first { border-top:1px solid var(--rule); border-radius:8px 8px 0 0; }
+  .del-row.last { border-radius:0 0 8px 8px; }
+  .del-row .dk { background:var(--accent); padding:20px 18px; display:flex; flex-direction:column; justify-content:center; }
+  .del-row .dk .lab { font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:6px; }
+  .del-row .dk .val { font-family:var(--serif); font-size:17px; color:#fff; line-height:1.2; }
+  .del-row .dk .when { font-size:11px; color:rgba(255,255,255,0.65); margin-top:8px; font-weight:600; }
+  .del-row .db { background:var(--white); padding:20px 22px; }
+  .del-row .db .h { font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+  .del-row .db .p { font-size:13px; color:var(--ink-mid); line-height:1.65; }
+
+  /* Footer */
+  .doc-footer { padding-top: 36px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-top: 64px; }
+  .footer-left { font-size: 12px; color: var(--ink-soft); line-height: 1.6; }
+  .footer-vieu { font-size: 22px; font-family: var(--serif); color: var(--ink-soft); }
+
+  .note { font-size: 11px; color: var(--ink-soft); line-height: 1.5; margin-top: 10px; }
+
+  @media print { body { background: white; } .page { padding: 0 0 48px; } .cover { padding: 48px 0 40px; } }
+  @media (max-width: 640px) {
+    .page { padding: 0 20px 60px; }
+    .cards, .cards.three, .two-col, .pillars { grid-template-columns: 1fr; }
+    .stat-strip { grid-template-columns: 1fr; }
+    .cover-title { font-size: 34px; }
+    .del-row, .del-row.first, .del-row.last { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- NAV -->
+  <nav style="position:sticky; top:0; z-index:100; background:var(--white); border-bottom:1px solid var(--rule); padding:12px 40px; display:flex; gap:28px; flex-wrap:wrap; max-width:100%;">
+    <a href="#s01" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); text-decoration:none;">Welcome</a>
+    <a href="#s02" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Market Moment</a>
+    <a href="#s03" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Your Business</a>
+    <a href="#s05" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Who You Sell To</a>
+    <a href="#s07" style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none;">Getting Started</a>
+  </nav>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">GTM Strategy Brief</div>
+    <h1 class="cover-title">Orange Business + NiCE<br><em>Go-to-Market</em><br>Strategy</h1>
+    <p class="cover-sub">A go-to-market intelligence brief powered by Vieu, built on 9B executive relationships to accelerate warm access to the financial services enterprises across EMEA that are the best fit for a combined <strong>Connectivity &amp; Cloud + Proactive AI Customer Engagement</strong> offer.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><span class="cover-meta-label">Prepared by</span><span class="cover-meta-value">Vieu</span></div>
+      <div class="cover-meta-item"><span class="cover-meta-label">Prepared for</span><span class="cover-meta-value">Orange Business &amp; NiCE</span></div>
+      <div class="cover-meta-item"><span class="cover-meta-label">Date</span><span class="cover-meta-value">September 2026</span></div>
+      <div class="cover-meta-item"><span class="cover-meta-label">Engagement</span><span class="cover-meta-value">Tier 1</span></div>
+    </div>
+  </div>
+
+  <!-- 01 WELCOME -->
+  <div class="section" id="s01">
+    <h2 class="section-title">Welcome to the<br><em>Vieu Tier 1 Program</em></h2>
+    <p class="section-intro">You've been onboarded to Vieu as your go-to-market partner. As a <strong>Tier 1</strong> account you get the full Vieu stack — warm-path intelligence into the financial services enterprises that matter for Orange Business and NiCE.</p>
+
+    <!-- Program banner -->
+    <div style="background: var(--ink); border-radius: 10px; padding: 28px 32px; margin-bottom: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+      <div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">The Program</div>
+        <div style="font-family:var(--serif); font-size:18px; color:#fff; line-height:1.25; margin-bottom:6px;">Vieu · Tier 1</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.5;">Full-service engagement with access to every Vieu capability.</div>
+      </div>
+      <div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">The Accounts</div>
+        <div style="font-family:var(--serif); font-size:18px; color:#fff; line-height:1.25; margin-bottom:6px;">Orange Business + NiCE</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.5;">Joint co-sell engagement — Connectivity &amp; Cloud + Proactive AI Engagement.</div>
+      </div>
+      <div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">The Goal</div>
+        <div style="font-family:var(--serif); font-size:18px; color:#fff; line-height:1.25; margin-bottom:6px;">Warm pipeline</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.5;">Booked meetings with the right financial services decision-makers.</div>
+      </div>
+    </div>
+
+    <!-- Deliverables -->
+    <p class="sub-label" style="margin-bottom:12px;">What You Get</p>
+    <div style="margin-bottom:36px;">
+      <div class="del-row first">
+        <div class="dk"><div class="lab">Deliverable 01</div><div class="val">Account Plans</div><div class="when">100 curated account plans</div></div>
+        <div class="db"><div class="h">Full-fledged account plans with strategic priorities</div><div class="p">Complete account plan fully enriched with corporate sentiment, strategic opportunities, stakeholders, connections and org chart.</div></div>
+      </div>
+      <div class="del-row">
+        <div class="dk"><div class="lab">Deliverable 02</div><div class="val">Verified Leads</div><div class="when">1,000 bounce-verified leads</div></div>
+        <div class="db"><div class="h">Bounce-verified leads, ranked by fit</div><div class="p">Contact-verified leads across your target accounts, enriched and prioritized by fit — ready for your team to work straight into outbound.</div></div>
+      </div>
+      <div class="del-row">
+        <div class="dk"><div class="lab">Deliverable 03</div><div class="val">Decision-Makers + Warm Paths</div><div class="when">100 warm paths</div></div>
+        <div class="db"><div class="h">Senior buyers with named warm paths</div><div class="p">Priority buying-committee decision-makers, each with a named warm path from your Orange Business and NiCE networks.</div></div>
+      </div>
+      <div class="del-row last">
+        <div class="dk"><div class="lab">Deliverable 04</div><div class="val">Look-alike Opportunities</div><div class="when">As surfaced</div></div>
+        <div class="db"><div class="h">High-fit accounts beyond your original list</div><div class="p">High-fit accounts that match the ICP but weren't on your list — each with fit rationale, connection paths, and verified contacts.</div></div>
+      </div>
+    </div>
+
+    <!-- How we start: two options -->
+    <p class="sub-label" style="margin-bottom:12px;">How We Start</p>
+    <div class="cards" style="margin-bottom:40px;">
+      <div class="card accent-top">
+        <div class="card-eyebrow">Option A · Existing customers</div>
+        <div class="card-title" style="font-size:16px;">Start with 100 EN customers</div>
+        <div class="card-body">Kick off with 100 EN customers — current customers with expansion scope. Vieu provides all stakeholders, warm paths, and account plans for them.</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">Option B · Prospective accounts</div>
+        <div class="card-title" style="font-size:16px;">Ingest or curate a target list</div>
+        <div class="card-body">If EN customers aren't available, we ingest your target list of prospective accounts — or curate one from a large macro list fitting your target industry. Here too, Vieu provides all stakeholders, warm paths, and account plans.</div>
+      </div>
+    </div>
+
+    <!-- Capability matrix — Tier 1, all rows delivered + accessible -->
+    <div class="vieu-box" style="margin-top:36px;">
+      <div class="vieu-box-label">Vieu · Tier 1 (All Services)</div>
+      <h3>Warm paths into the accounts that matter, backed by the full intelligence stack.</h3>
+      <p>Vieu maps your extended network — Orange Business and NiCE — against your target list to surface the warmest paths to decision-makers. As Tier 1, every capability below is both delivered by Vieu and available to your team in the platform.</p>
+
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-text">Fast track decision maker access</div></div>
+        <div class="pillar"><div class="pillar-text">Strategic account intelligence</div></div>
+        <div class="pillar"><div class="pillar-text">Stakeholder intelligence</div></div>
+      </div>
+
+      <div class="del-matrix-wrap">
+      <table class="del-matrix">
+        <thead>
+          <tr><th class="label-col"></th><th class="delivers-col">Vieu Delivers</th><th class="access-col" style="color:var(--accent);border-bottom:2px solid var(--accent);">Your Access</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">01</span><div class="row-label-inner"><span class="row-title">Account plan</span><span class="row-desc">Deep account POV with contextual research aligned to your sales stages</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">02</span><div class="row-label-inner"><span class="row-title">Connection paths</span><span class="row-desc">Accelerate decision maker access using your company's full network</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">03</span><div class="row-label-inner"><span class="row-title">Stakeholder map &amp; org chart</span><span class="row-desc">Know the decision makers and influencers across all buying groups</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">04</span><div class="row-label-inner"><span class="row-title">Opportunities</span><span class="row-desc">Identify trigger points where Vieu can drive outcomes for target accounts</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">05</span><div class="row-label-inner"><span class="row-title">Technographics</span><span class="row-desc">Know who's using competitor or complementary tech, and in what context</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">06</span><div class="row-label-inner"><span class="row-title">Verified contact details</span><span class="row-desc">Waterfall enrichment across multiple data vendors to maximize TAM coverage</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="label-col"><div class="row-label-wrap"><span class="row-num">07</span><div class="row-label-inner"><span class="row-title">White-glove services</span><span class="row-desc">A dedicated customer success team for anything beyond the Vieu platform's scope</span></div></div></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+            <td class="icon-col"><span class="mark-delivers"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 MARKET MOMENT -->
+  <div class="section" id="s02">
+    <div style="font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Your Market Moment</div>
+    <h2 class="section-title">Here is what we found.</h2>
+    <p class="section-intro">Two forces are converging on financial services in EMEA: banks and insurers are consolidating global connectivity, network, and cloud transformation onto fewer strategic partners, while contact-center leaders are under pressure to move from reactive service to proactive, AI-led customer engagement — without breaking compliance. Orange Business answers the first; NiCE the second.</p>
+
+    <div class="stat-strip">
+      <div class="stat-cell"><div class="stat-num">220+</div><div class="stat-label">countries &amp; territories reached by Orange Business's global network<sup>1</sup></div></div>
+      <div class="stat-cell"><div class="stat-num">70%</div><div class="stat-label">of Fortune 500 financial services companies are Orange Business customers<sup>1</sup></div></div>
+      <div class="stat-cell"><div class="stat-num">$75M+</div><div class="stat-label">in new yearly revenue unlocked by enterprises using NiCE's proactive AI agents<sup>2</sup></div></div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Secure the connection, then make it count. One resilient network and compliance backbone, one proactive AI layer that turns every customer signal into an outcome."</p>
+      <cite>Vieu Account Intelligence · Orange Business + NiCE</cite>
+    </div>
+    <p class="note"><sup>1</sup> Orange Business company profile and customer figures (orange-business.com; equinix.com partner directory). <sup>2</sup> NiCE AI Agents for Proactive Engagement results (nice.com / cognigy.com). Framing is Vieu's pre-kickoff hypothesis, to validate with your team.</p>
+  </div>
+
+  <!-- 03 UNDERSTANDING YOUR BUSINESS -->
+  <div class="section" id="s03">
+    <h2 class="section-title">Our Understanding of Your Business</h2>
+    <p class="section-intro">Our pre-kickoff research into Orange Business and NiCE, from public sources — to align on what we have right and where you'll sharpen us.</p>
+
+    <div class="cards" style="margin-bottom: 24px;">
+      <div class="card accent-top">
+        <div class="card-eyebrow">Orange Business · orange-business.com · Primary</div>
+        <div class="card-title">Global Connectivity, Cloud &amp; Cybersecurity</div>
+        <div class="card-body">The B2B arm of the Orange Group — a global network operator and technology integrator for multinational enterprises. Portfolio spans enriched connectivity, cloud, IoT, unified communications, and cybersecurity, with a network reaching 220+ countries and territories and deep, long-standing relationships in financial services.</div>
+      </div>
+      <div class="card accent-top">
+        <div class="card-eyebrow">NiCE · nice.com</div>
+        <div class="card-title">AI-Powered Customer Experience Platform</div>
+        <div class="card-body">CXone Mpower, NiCE's CX AI platform, orchestrates human and AI agents across the customer journey. Its <strong>AI Agents for Proactive Engagement</strong> analyze real-time signals to initiate outreach before friction occurs, conducting compliant, personalized conversations across channels — with purpose-built packages for banking and insurance.</div>
+      </div>
+    </div>
+
+    <!-- Combined opportunity -->
+    <div style="background: var(--white); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 22px 24px; margin-bottom: 28px;">
+      <div style="font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">The Orange Business + NiCE Opportunity</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div>
+          <div style="font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;">How it fits together</div>
+          <ul style="list-style:none; font-size:13px; color:var(--ink-mid); line-height:1.7;">
+            <li style="margin-bottom:6px; padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--green);">&#x2713;</span> Orange Business secures and runs the network, cloud, and compliance foundation financial institutions build on</li>
+            <li style="margin-bottom:6px; padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--green);">&#x2713;</span> NiCE layers proactive, AI-led engagement on top — turning that infrastructure into measurable CX and revenue outcomes</li>
+            <li style="padding-left:16px; position:relative;"><span style="position:absolute;left:0;color:var(--green);">&#x2713;</span> Both already sell deeply into FSI — a natural, credible joint motion into shared accounts</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;">The opportunity in one sentence</div>
+          <p style="font-size:13px; color:var(--ink-mid); line-height:1.7;">Orange Business brings the secure connectivity and cloud backbone and NiCE brings proactive AI engagement — and Vieu maps the warm paths that turn that combined reach into booked meetings.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 04 GTM CHALLENGE -->
+  <div class="section" id="s04">
+    <h2 class="section-title">The GTM Challenge</h2>
+    <p class="section-intro">The offer is compelling — the challenge is go-to-market. Financial services deals clear long, risk-averse, multi-stakeholder committees across IT, operations, compliance, and the CX function. The way through is warm access to the right leaders.</p>
+
+    <div class="two-col" style="margin-bottom:32px;">
+      <div>
+        <table class="data-table">
+          <thead><tr><th>Where It Works</th><th>Where It Stalls</th></tr></thead>
+          <tbody>
+            <tr><td>Trusted, secure connectivity and cloud foundation already inside most large FSI accounts</td><td>Reaching the CX, contact-center, and digital transformation buyers who own the AI engagement decision</td></tr>
+            <tr><td>Proactive AI engagement with proven revenue and retention lift, built compliance-first for regulated industries</td><td>Getting network/infrastructure and CX stakeholders aligned on one combined evaluation</td></tr>
+            <tr><td>Orange Business's deep, long-standing FSI relationships across EMEA</td><td>Deals stalling across a long committee without coordinated, warm intros</td></tr>
+            <tr><td>Two credible, complementary vendors already serving overlapping FSI accounts</td><td>A combined Orange Business + NiCE story needs a single, trusted path in</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="pull-quote" style="margin-top:0"><p>"Vieu will help you turn shared FSI relationships into joint pipeline."</p><cite>Vieu Account Intelligence</cite></div>
+        <p style="font-size:13px; color: var(--ink-mid); line-height:1.7; margin-top:16px;">Not generic leads — warm, context-rich introductions to the exact buying committee, fit for high-trust regulated evaluations.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 05 WHO YOU SELL TO -->
+  <div class="section" id="s05">
+    <h2 class="section-title">Who You Sell To</h2>
+    <p class="section-intro"><strong>Financial services institutions</strong> — 1,000+ employees, $100M+ revenue — across <strong>EMEA</strong>, with specific priority countries to be confirmed at kickoff. One combined ICP below; named accounts built from your list at kickoff.</p>
+
+    <!-- SEGMENT A -->
+    <div class="segment">
+      <div class="segment-head">
+        <span class="segment-kicker">Target ICP</span>
+        <span class="segment-title">Financial Services Institutions, EMEA</span>
+        <span class="side-pill">Orange Business + NiCE</span>
+      </div>
+      <div class="card-body">Banks, insurers, credit unions, and fintechs across EMEA with 1,000+ employees and $100M+ revenue. Ask in scope: marketing asset creation support — reviewing existing assets and providing suggested improvements, potentially in partnership with the customer's AWS campaign manager or a select agency.</div>
+      <div class="sub-label">Buyer personas</div>
+      <div class="tag-group">
+        <span class="tag tier1">Chief Customer Officer / CCO</span>
+        <span class="tag tier1">Chief Experience Officer</span>
+        <span class="tag tier1">Head of Customer Experience / CX</span>
+        <span class="tag tier1">Head of Contact Center</span>
+        <span class="tag tier1">Chief Digital Officer / CDO</span>
+        <span class="tag tier1">Head of Automation</span>
+      </div>
+      <div class="sub-label">Target segments</div>
+      <div class="tag-group">
+        <span class="tag">Retail &amp; commercial banking</span>
+        <span class="tag">Insurance</span>
+        <span class="tag">Credit unions</span>
+        <span class="tag">Fintech</span>
+        <span class="tag">Asset &amp; wealth management</span>
+      </div>
+      <div class="sub-label">Fit signals &amp; technographics</div>
+      <div class="tag-group">
+        <span class="tag tier2">AI Agent / Agentic CX</span>
+        <span class="tag tier2">Customer Journey Orchestration</span>
+        <span class="tag tier2">CXone / Cloud Contact Center Transformation</span>
+        <span class="tag tier2">Intelligent Customer Service Automation</span>
+        <span class="tag tier2">Proactive Customer Engagement</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 07 WHAT WE NEED -->
+  <div class="section" id="s07">
+    <div style="font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Getting Started</div>
+    <h2 class="section-title">What We Need From You</h2>
+    <p class="section-intro">We've done the research. A few inputs from you sharpen it — most confirmed on the kickoff call.</p>
+
+    <table class="data-table" style="margin-bottom:36px;">
+      <thead><tr><th>What we need</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Named target account list</strong>: your current priority accounts, even rough</td><td>Vieu's pre-kickoff mapping is strongest when built against accounts you already care about</td></tr>
+        <tr><td><strong>Priority countries within EMEA</strong>: confirm the specific markets to focus first</td><td>Sharpens targeting so Vieu's mapping reflects your actual go-to-market geography, not EMEA broadly</td></tr>
+        <tr><td><strong>Marketing assets for review</strong>: existing campaign materials, plus your AWS campaign manager or agency contact if relevant</td><td>Lets Vieu (and any partner agency) assess and suggest improvements against what's already in market</td></tr>
+        <tr><td><strong>LinkedIn CSV</strong> from key leaders who will be willing to make introductions</td><td>Mapping your team's full connection graph lets Vieu surface warm paths far more accurately</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:36px; margin-bottom:16px;">Important Links</div>
+    <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--rule); border-radius:8px; overflow:hidden;">
+      <div style="display:grid; grid-template-columns:200px 1fr auto; align-items:center; padding:16px 20px; background:var(--white); border-bottom:1px solid var(--rule); gap:16px;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink);">Vieu Platform Login</div>
+        <div style="font-size:13px; color:var(--ink-soft);">Access your account, run searches, and activate warm paths</div>
+        <a href="https://www.vieu.com/login" target="_blank" style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); border:1.5px solid var(--accent); border-radius:4px; padding:6px 14px; text-decoration:none; white-space:nowrap;">Log In &rarr;</a>
+      </div>
+      <div style="display:grid; grid-template-columns:200px 1fr; align-items:start; padding:20px 20px; background:var(--paper); gap:16px;">
+        <div style="font-size:13px; font-weight:600; color:var(--ink); padding-top:2px;">Upload LinkedIn CSV</div>
+        <div>
+          <div style="font-size:13px; color:var(--ink-soft); margin-bottom:14px;">Adding your LinkedIn connections expands the warm paths Vieu can surface. Each team member across both companies should complete these steps.</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">1</span><span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Go to <strong>linkedin.com/mypreferences/d/download-my-data</strong></span></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">2</span><span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Select <strong>"Download larger data archive"</strong>, then click <strong>Request archive</strong></span></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">3</span><span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">LinkedIn emails a download link to your personal email within a few hours (sometimes as one or two downloads)</span></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">4</span><span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Download the <strong>.zip</strong> file(s) — the links expire after <strong>3 days</strong></span></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">5</span><span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Open the archive and export only <strong>Connections.csv</strong> — do not share the full .zip, it contains personal information</span></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="flex-shrink:0; width:22px; height:22px; background:var(--accent-lt); color:var(--accent); border-radius:4px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">6</span><span style="font-size:13px; color:var(--ink-mid); line-height:1.55;">Upload <strong>Connections.csv</strong> using your Vieu link below</span></div>
+          </div>
+          <a href="https://www.vieu.com/boost-network?t=nice-JsL499sUVVF6t6faTgi22" target="_blank" style="display:inline-block; margin-top:16px; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#fff; background:var(--accent); border-radius:4px; padding:9px 18px; text-decoration:none;">Upload Connections.csv &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-left">
+      <strong>Orange Business + NiCE GTM Strategy Brief</strong><br>
+      Prepared by Vieu · September 2026 · Confidential<br>
+      Contact: bjain@vieu.com · Built on 9B Executive Relationships
+    </div>
+    <div class="footer-vieu">vieu</div>
+  </div>
+
+</div>
+</body>
+</html>
